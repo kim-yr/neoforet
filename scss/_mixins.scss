@@ -33,3 +33,9 @@
   $shadow: unquote($shadow); //따옴표 없애기
   text-shadow: $shadow;
 }
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

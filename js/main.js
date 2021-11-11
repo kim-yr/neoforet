@@ -13,3 +13,13 @@ const mainVisualSlider = new Swiper("#mainVisual", {
     clickable: true,
   },
 });
+
+const productVisualSlider = new Swiper("#product .list", {
+  speed: 600,
+  slidesPerView: 3, //화면에 보여지는 갯수
+  slidesPerGroup: 3, //한번에 넘어가는 갯수
+  navigation: {
+    prevEl: "#product .prev",
+    nextEl: "#product .next",
+  },
+});
