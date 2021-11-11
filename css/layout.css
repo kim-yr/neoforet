@@ -1,0 +1,31 @@
+body { font-family: "Noto Sans KR", "Lexend", sans-serif; }
+
+#header { width: 100%; height: 100px; position: fixed; top: 0; left: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+#header:hover { background-color: #fdfdfd; }
+
+#header:hover .container .logo a { display: block; width: 150px; height: 35px; z-index: 2; background: url(../img/main_logo_color.png) no-repeat center/cover; }
+
+#header:hover .container .gnbWrap .gnb > li > a { color: #333; }
+
+#header .container { height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 0 80px; }
+
+#header .container .logo a { display: block; width: 150px; height: 35px; background: url(../img/main_logo.png) no-repeat center/cover; }
+
+#header .container .gnbWrap .gnb { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
+
+#header .container .gnbWrap .gnb > li { width: 135px; height: 100px; text-align: center; }
+
+#header .container .gnbWrap .gnb > li > a { line-height: 100px; color: #fdfdfd; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+
+#header .container .gnbWrap .gnb > li > a:hover { color: #1dcb5d; }
+
+#header .container .gnbWrap .gnb > li > a::after { display: block; content: ""; border-bottom: solid 3px #1dcb5d; -webkit-transform: scaleX(0); transform: scaleX(0); -webkit-transition: -webkit-transform 250ms ease-in-out; transition: -webkit-transform 250ms ease-in-out; transition: transform 250ms ease-in-out; transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out; }
+
+#header .container .gnbWrap .gnb > li > a:hover::after { -webkit-transform: scaleX(1); transform: scaleX(1); }
+
+#header .container .gnbWrap .gnb > li .depth02 { display: none; }
+
+#header .container .gnbWrap .gnb > li .depth02 li { border: 1px solid red; }
+
+#visual { height: 100vh; background: url(../img/bg1.jpg); }
