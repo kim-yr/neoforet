@@ -1,13 +1,3 @@
 @media all and (max-width: 1440px) { #main #news .contents { width: 100%; } }
 
-.board { width: 100%; }
-
-.board tr th, .board tr td { padding: 30px 0; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: left; }
-
-.board tr th { width: 100px; float: left; background-color: aqua; }
-
-.board tr th:nth-of-type(2n) { margin-left: 60px; }
-
-.board tr td { float: left; width: calc(50% - 130px); border: 1px solid blue; }
-
-.board tr td input[type="text"] { background-color: red; border: none; height: 47px; width: 100%; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.require { color: #c50000; }
