@@ -7,6 +7,11 @@
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
+
+@mixin ellipse {
+  white-space: nowrap;
+}
+
 @mixin pseudo($display: block, $position: absolute) {
   content: "";
   display: $display;
@@ -38,4 +43,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media all and (max-width: 1440px) {
+  #main {
+    #news {
+      .contents {
+        width: 100%;
+      }
+    }
+  }
 }

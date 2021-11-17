@@ -1,5 +1,30 @@
 @import "vars";
 @import "mixins";
+.btns {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  .btn {
+    border: 1px solid $black-color;
+    border-radius: 100px;
+    @include flexCenter();
+    transition: 0.25s ease;
+  }
+  .transition:hover {
+    background-color: $black-color;
+    border-color: $black-color;
+    color: $white-color;
+  }
+  .large {
+    height: 50px;
+    padding: 0 50px;
+  }
+}
+
 #main {
   #mainVisual {
     li {
@@ -154,8 +179,9 @@
     .itemList {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 100px;
       .item {
-        background-color: red;
+        // background-color: red;
         border: 1px solid $gray-color;
         border-radius: 10px;
         overflow: hidden;
@@ -215,6 +241,9 @@
           }
         }
       }
+    }
+
+    .btns {
     }
   }
 }
