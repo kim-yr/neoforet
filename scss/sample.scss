@@ -20,6 +20,7 @@
         display: flex;
         // padding-right: 30px;
         &::before {
+          font-family: "Material Icons";
           content: "chevron_right";
           display: block;
           padding: 0 10px;
