@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@media all and (max-width: 1440px) { #main #news .contents { width: 100%; } }
+
+html { font-size: 10px; }
+
+body { font-size: 1.6rem; font-family: "Lexend", "Noto Sans KR", sans-serif; color: #111111; }
+
+.hidden { display: none; }
+
+#header { width: 100%; height: 100px; position: fixed; top: 0; left: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; z-index: 5; }
+
+#header:hover { background-color: #fff; }
+
+#header:hover .container #logo a .color { display: block; }
+
+#header:hover .container #logo a .white { display: none; }
+
+#header:hover .container .logo a { display: block; width: 150px; height: 35px; z-index: 2; }
+
+#header:hover .container .gnbWrap .gnb > li > a { color: #333; }
+
+#header:hover .container .utility button { color: #333; }
+
+#header .container { height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#header .container #logo { position: absolute; left: 50px; top: 30px; }
+
+#header .container #logo a { display: -webkit-box; display: -ms-flexbox; display: flex; width: 150px; height: 35px; }
+
+#header .container #logo a .color { display: none; }
+
+#header .container #logo a .white { display: block; }
+
+#header .container .gnbWrap .gnb { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#header .container .gnbWrap .gnb > li:hover .depth02 { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#header .container .gnbWrap .gnb > li:hover > a::after { -webkit-transform: scaleX(1); transform: scaleX(1); }
+
+#header .container .gnbWrap .gnb > li > a { display: -webkit-box; display: -ms-flexbox; display: flex; height: 100px; padding: 0 50px; font-size: 18px; font-weight: 500; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; color: #fff; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; position: relative; /*after의 기준을 a로 정하려면 position: relative 선언해야 함. 기준을 정해주는 것 부모에다 적어도 되는데, 다른 자식에 영향이 갈 수도 있어서 a에 적음. width나 height를 적은 게 아닌 left, right 값으로 넣은거라 기준 설정한 것. */ }
+
+#header .container .gnbWrap .gnb > li > a:hover { color: #1dcb5d; }
+
+#header .container .gnbWrap .gnb > li > a::after { content: ""; display: block; position: absolute; left: 50px; right: 50px; height: 3px; background-color: #1dcb5d; top: 65px; -webkit-transform: scaleX(0); transform: scaleX(0); -webkit-transform-origin: 50% 50%; transform-origin: 50% 50%; -webkit-transition: 0.25s ease; transition: 0.25s ease; }
+
+#header .container .gnbWrap .gnb > li .depth02 { display: none; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; width: 100%; position: absolute; left: 0; background-color: #f5f5f5; }
+
+#header .container .gnbWrap .gnb > li .depth02 li:hover { color: #1dcb5d; }
+
+#header .container .gnbWrap .gnb > li .depth02 li a { display: -webkit-box; display: -ms-flexbox; display: flex; height: 60px; padding: 0 30px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 14px; -webkit-transition: 0.25s ease; transition: 0.25s ease; }
+
+#header .container .utility { position: absolute; right: 50px; top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; height: 100px; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+#header .container .utility .item:hover button { background-color: #fff; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); cursor: pointer; border: 1px solid #eee; color: #1dcb5d; }
+
+#header .container .utility .item:hover ul { margin-top: -10px; display: block; border: 1px solid #eee; -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); }
+
+#header .container .utility button { font-size: 1.4rem; color: #ddd; text-transform: uppercase; width: 80px; height: 50px; border-bottom: none; border-radius: 5px 5px 0 0; font-weight: 600; }
+
+#header .container .utility ul { display: none; background-color: #fff; position: absolute; border-radius: 0 0 5px 5px; }
+
+#header .container .utility ul::before { content: ""; display: block; position: absolute; width: 78px; height: 3px; background-color: #fff; position: absolute; left: 0; top: -2px; }
+
+#header .container .utility ul li:hover { color: #1dcb5d; }
+
+#header .container .utility .snsLink li { width: 160px; text-align: left; }
+
+#header .container .utility .snsLink li a { display: block; padding: 15px 0 15px 40px; font-size: 1.4rem; position: relative; }
+
+#header .container .utility .snsLink li a::before { content: ""; display: block; position: absolute; width: 32px; height: 18px; display: block; left: 10px; background-image: url(../img/utility.png); }
+
+#header .container .utility .snsLink li:nth-child(1) a::before { background-position: 0 0; }
+
+#header .container .utility .snsLink li:nth-child(2) a::before { background-position: -50px 0; }
+
+#header .container .utility .snsLink li:nth-child(3) a::before { background-position: -100px 0; }
+
+#header .container .utility .snsLink li:nth-child(4) a::before { background-position: -145px 0; }
+
+#header .container .utility .snsLink li:nth-child(5) a::before { background-position: -200px 0; }
+
+#header .container .utility .snsLink li:nth-child(1):hover a::before { background-position: 0 50px; }
+
+#header .container .utility .snsLink li:nth-child(2):hover a::before { background-position: -50px 50px; }
+
+#header .container .utility .snsLink li:nth-child(3):hover a::before { background-position: -100px 50px; }
+
+#header .container .utility .snsLink li:nth-child(4):hover a::before { background-position: -145px 50px; }
+
+#header .container .utility .snsLink li:nth-child(5):hover a::before { background-position: -200px 50px; }
+
+#header .container .utility .lang li { width: 78px; text-align: center; padding: 15px 0; }
+
+#footer { padding: 50px 80px 80px 80px; background-color: #f5f5f5; position: relative; }
+
+#footer .btmLogo { margin-bottom: 20px; }
+
+#footer .info { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 14px; color: #888; margin-bottom: 10px; }
+
+#footer .info li { padding: 0 10px; position: relative; }
+
+#footer .info li::before { content: ""; display: block; width: 1px; height: 15px; background-color: #888; position: absolute; top: 0; left: 0; }
+
+#footer .info li:first-child { padding-left: 0; }
+
+#footer .info li:first-child::before { display: none; }
+
+#footer .copyright { font-size: 14px; color: #888; }
+
+#footer .murim { position: absolute; background-color: #ccc; color: #fff; font-size: 14px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-radius: 50px; padding: 10px 20px; top: 50px; right: 80px; -webkit-transition: 0.25s ease; transition: 0.25s ease; }
+
+#footer .murim:hover { background-color: #888; }

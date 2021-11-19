@@ -1,0 +1,285 @@
+@import "vars";
+@import "mixins";
+.require {
+  color: rgb(197, 0, 0);
+}
+
+.boardBox {
+  margin-top: 100px;
+  .guide {
+    line-height: 1.5;
+    padding: 10px 0;
+  }
+}
+.board {
+  width: 100%;
+  th,
+  td {
+    padding: 20px 10px;
+  }
+  th {
+    text-align: left;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    border: none;
+    border-bottom: 1px solid darken($light-gray-color, 20);
+    height: 47px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none; //focus했을 때 테두리 안 생기게
+    transition: 0.25s ease;
+    &:focus,
+    &:hover {
+      border-bottom-color: $text-color;
+    }
+  }
+  select {
+    height: 47px;
+    border: none;
+    // width: 100%; 보통 칼럼 갯수 맞추는게 좋음
+    width: calc(4 / 9 * 100%);
+    appearance: none;
+    background: url(../img/expand_more_black_24dp.svg) right 20px top 50% no-repeat;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    // position: relative;
+    // &::after {
+    //   width: 20px;
+    //   height: 20px;
+    //   position: absolute;
+    //   display: block;
+    //   font-family: "Material Icons";
+    //   content: "expand_more";
+    //   left: 0;
+    //   top: 50%;
+    //   z-index: 2;
+    // } select에는 애프터 안먹힘
+  }
+  .address {
+    .readonly {
+      border: none;
+      background-color: $light-gray-color;
+      border-radius: 5px;
+    }
+    .addr01 {
+      width: calc(40 / 90 * 100%);
+      // width: 100%;
+      display: flex;
+      button {
+        white-space: nowrap;
+        border: 1px solid $gray-color;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 100px;
+        margin-left: 15px;
+        span {
+          margin-right: 15px;
+          color: $main-color;
+        }
+      }
+    }
+    .addr02 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      .kkk {
+        // width: calc(100% - 538.787px);
+        width: calc(100% - 50px);
+      }
+      .readonly {
+        // width: 518.787px;
+        width: 80%;
+        margin-right: 20px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  textarea {
+    box-sizing: border-box;
+    height: 300px;
+    resize: none;
+    background-color: $light-gray-color;
+    padding: 20px;
+    border: none;
+  }
+}
+.agreeBox {
+  padding: 50px 0;
+  margin-top: 50px;
+  border-top: 1px solid $gray-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .agree {
+    .infoAgree {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: center;
+      button {
+        margin-left: 20px;
+        padding: 5px 20px;
+        background-color: $text-color;
+        border-radius: 100px;
+        color: $white-color;
+      }
+    }
+  }
+  button[type="submit"] {
+    padding: 20px 40px;
+    background-color: $text-color;
+    color: $white-color;
+    border-radius: 100px;
+  }
+}
+
+.checkbox {
+  input {
+    display: none;
+  }
+  input:checked ~ .label::before {
+    background-color: $main-color;
+    border: none;
+    color: $white-color;
+    content: "\2713";
+    @include longShadow(darken($main-color, 20), right, 10);
+  }
+  .label {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    &::before {
+      content: "";
+      @include flexCenter();
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      border: 2px solid $gray-color;
+      border-radius: 3px;
+      margin-right: 5px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.faqBox {
+  ul {
+    li {
+      &.on {
+        dt {
+          color: $main-color;
+          .icon::before {
+            transform: rotate(45deg);
+            background-color: $main-color;
+          }
+          .icon::after {
+            transform: rotate(-45deg);
+            background-color: $main-color;
+          }
+        }
+        dd {
+          display: block;
+        }
+      }
+      dt {
+        display: flex;
+        align-items: center;
+        // margin-right: 30px;
+        border-bottom: 1px solid $light-gray-color;
+        cursor: pointer;
+        transition: 0.25s ease;
+        &:hover {
+          color: $main-color;
+          .icon::before,
+          .icon::after {
+            background-color: $main-color;
+          }
+        }
+        .category {
+          display: block;
+          height: 100px;
+          width: 150px;
+          @include flexCenter();
+        }
+        .icon {
+          margin-left: auto;
+          width: 100px;
+          height: 100px;
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $gray-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: 7px;
+            transform: rotate(-45deg);
+            transition: 0.25s ease;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $gray-color;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -7px;
+            transform: rotate(45deg);
+            transition: 0.25s ease;
+          }
+        }
+      }
+      dd {
+        display: none;
+        background-color: $light-gray-color;
+        line-height: 1.5;
+        padding: 50px 50px 50px 150px;
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+// .board {
+//   width: 100%;
+//   tr {
+//     th,
+//     td {
+//       padding: 30px 0;
+//       box-sizing: border-box;
+//       text-align: left;
+//     }
+//     th {
+//       width: 100px;
+//       float: left;
+//       background-color: aqua;
+//       &:nth-of-type(2n) {
+//         margin-left: 60px;
+//       }
+//     }
+//     td {
+//       float: left;
+//       width: calc(50% - 130px);
+//       border: 1px solid blue;
+//       input[type="text"] {
+//         background-color: red;
+//         border: none;
+//         height: 47px;
+//         width: 100%;
+//         padding: 10px;
+//         box-sizing: border-box;
+//       }
+//     }
+//   }
+// }

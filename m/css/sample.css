@@ -1,0 +1,29 @@
+@media all and (max-width: 1440px) { #main #news .contents { width: 100%; } }
+
+#subContentsWrap { margin-top: 160px; padding: 0 100px; color: #777; }
+
+#subContentsWrap #contents { width: 1360px; margin: 0 auto; }
+
+.breadCrumbs { font-size: 14px; }
+
+.breadCrumbs ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.breadCrumbs ul li a { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.breadCrumbs ul li a::before { font-family: "Material Icons"; content: "chevron_right"; display: block; padding: 0 10px; }
+
+.breadCrumbs ul li:nth-child(1) a::before { display: none; }
+
+.subTitle { font-size: 3.8rem; font-weight: 600; color: #333; margin-top: 20px; }
+
+#lnb .depth02 { display: -webkit-box; display: -ms-flexbox; display: flex; margin-top: 40px; margin-bottom: 70px; position: relative; }
+
+#lnb .depth02::after { content: ""; display: block; height: 3px; background-color: #333; width: 100%; position: absolute; top: 86px; }
+
+#lnb .depth02 li a { padding: 10px 20px; border-radius: 50px; -webkit-transition: 0.25s ease; transition: 0.25s ease; }
+
+#lnb .depth02 li a.checked { background-color: #1dcb5d; color: #fff; }
+
+#lnb .depth02 li a:hover { background-color: whitesmoke; color: inherit; }
+
+.boardBox .guide { padding: 20px 0; font-size: 14px; line-height: 2; }

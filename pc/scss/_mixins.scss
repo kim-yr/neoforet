@@ -1,0 +1,56 @@
+@mixin multiEllipsis($line-height: 1.5, $line: 2) {
+  line-height: $line-height;
+  height: $line-height * $line * 1em; //높이 얼마로 지정할건지
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line; //몇줄 들어갈건지
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipse {
+  white-space: nowrap;
+}
+
+@mixin pseudo($display: block, $position: absolute) {
+  content: "";
+  display: $display;
+  position: $position;
+}
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin longShadow($bg-color: #000, $direction: right, $num: 100) {
+  //text-shadow: 1px 1px 0px rgba()
+  $shadow: "";
+  @if ($direction==right) {
+    @for $i from 1 to $num {
+      $shadow: $shadow + $i + "px " + $i + "px 0px " + $bg-color + ",";
+    }
+    $shadow: $shadow + $num + "px " + $num + "px 0px " + $bg-color + ";";
+  } @else {
+    @for $i from 1 to $num {
+      $shadow: $shadow + $i * -1 + "px " + $i + "px 0px " + $bg-color + ",";
+    }
+    $shadow: $shadow + $num * -1 + "px " + $num + "px 0px " + $bg-color + ";";
+  }
+  $shadow: unquote($shadow); //따옴표 없애기
+  text-shadow: $shadow;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-width: 1440px) {
+  #main {
+    #news {
+      .contents {
+        width: 100%;
+      }
+    }
+  }
+}

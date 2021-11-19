@@ -1,0 +1,317 @@
+@import "vars";
+@import "mixins";
+.btns {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  .btn {
+    border: 1px solid $gray-color;
+    border-radius: 100px;
+    @include flexCenter();
+    transition: 0.25s ease;
+  }
+  .transition:hover {
+    background-color: $black-color;
+    border-color: $black-color;
+    color: $white-color;
+  }
+  .large {
+    height: 50px;
+    padding: 0 50px;
+  }
+}
+
+#main {
+  #mainVisual {
+    li {
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      &.visual01 {
+        background-image: url(../img/bg1.jpg);
+      }
+      &.visual02 {
+        background-image: url(../img/bg2.jpg);
+      }
+      &.visual03 {
+        background-image: url(../img/bg3.jpg);
+      }
+    }
+    .slogan {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $white-color;
+      text-align: center;
+      z-index: 2;
+      .main {
+        font-size: $xx-large-size;
+        text-transform: capitalize;
+        font-weight: 700;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+      }
+      .sub {
+        margin-top: 2rem;
+        font-size: $large-size;
+      }
+      a {
+        display: inline-flex;
+        padding: 10px 30px;
+        border: 1px solid $white-color;
+        border-radius: 100px;
+        margin-top: 5rem;
+        align-items: center;
+        transition: 0.25s ease;
+        &:hover {
+          border-color: $white-color;
+          background-color: $point-color;
+          span {
+            color: $white-color;
+          }
+        }
+        span {
+          margin-left: 2rem;
+          color: $point-color;
+        }
+      }
+      .pagination {
+        margin-top: 50px;
+        .swiper-pagination-bullet {
+          width: 15px;
+          height: 15px;
+          background: none;
+          border: 2px solid $white-color;
+          opacity: 1;
+          border-radius: 100px;
+          transition: 0.25s ease;
+          &-active {
+            background-color: rgba($white-color, 0.3);
+            width: 80px;
+          }
+        }
+      }
+    }
+  } //mainVisual end
+
+  #product {
+    overflow: hidden;
+    position: relative;
+    .titleBox {
+      position: absolute;
+      z-index: 5;
+      padding: 80px; //left, top 으로 설정해도 됨
+      h2 {
+        font-size: $title-size;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      p {
+        margin-top: 30px;
+        font-size: $medium-size;
+      }
+    }
+
+    .list {
+      li {
+        position: relative;
+        a {
+          position: absolute;
+          right: 50px;
+          bottom: 50px;
+          border: 1px solid $black-color;
+          border-radius: 100px;
+          display: flex;
+          align-items: center;
+          padding: 5px 15px;
+          font-weight: 500;
+          transition: 0.25s ease;
+          span {
+            margin-left: 5px;
+            color: $point-color;
+          }
+          &:hover {
+            background-color: $black-color;
+            color: $white-color;
+          }
+        }
+      }
+    }
+    .btns {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
+      button {
+        background-color: $white-color;
+        @include box(50px);
+        @include flexCenter();
+        span {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  #news {
+    padding: 200px 80px 0 80px;
+    // width: 1440px;
+    // margin: auto;
+    .titleBox {
+      margin-bottom: 50px;
+      .title {
+        font-size: $title-size;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      p {
+        margin-top: 30px;
+        font-size: $medium-size;
+      }
+    } //.titleBox end
+
+    .itemList {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      .item {
+        // background-color: red;
+        border: 1px solid $gray-color;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 32%;
+        position: relative;
+        &:hover .textBox {
+          bottom: 0;
+        }
+        a {
+          display: block;
+          height: 400px;
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size: 100%;
+          transition: 0.25s ease;
+          &:hover {
+            background-size: 105%;
+          }
+        }
+        &:nth-child(1) a {
+          background-image: url(../img/news01.jpg);
+        }
+        &:nth-child(2) a {
+          background-image: url(../img/news02.jpg);
+        }
+        &:nth-child(3) a {
+          background-image: url(../img/news03.jpg);
+        }
+        .textBox {
+          position: absolute;
+          width: 100%;
+          height: 250px;
+          bottom: -80px;
+          left: 0;
+          background-color: $white-color;
+          padding: 25px;
+          box-sizing: border-box;
+          transition: 0.25s ease;
+          .newsTitle {
+            font-size: $large-size;
+            font-weight: 500;
+            //여기서부터
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            //여기까지는 글자 넘치면 말줄임표 쓰기
+            letter-spacing: -1.5px; //자간 줄이기
+          }
+          .date {
+            margin-top: 80px;
+            color: $heavy-gray-color;
+          }
+          .article {
+            margin-top: 40px;
+            font-size: $normal-size;
+            color: $heavy-gray-color;
+          }
+        }
+      }
+    }
+
+    .btns {
+      margin-bottom: 100px;
+    }
+  }
+
+  #cs {
+    display: flex;
+    padding: 0 80px;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    button {
+      color: $white-color;
+      span {
+        color: $main-color;
+      }
+    }
+    > div {
+      width: 49%;
+      border-radius: 10px;
+      overflow: hidden;
+      color: $white-color;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        .text {
+          line-height: 1.5;
+          .title {
+            font-size: $large-size;
+            font-weight: 600;
+          }
+          .content {
+            font-size: $normal-size;
+          }
+        }
+        button {
+          width: 120px;
+          height: 35px;
+          border-radius: 50px;
+          background-color: $black-color;
+          transition: 0.25s ease;
+          @include flexCenter();
+          span {
+            margin-left: 5px;
+            transition: 0.25s ease;
+          }
+          &:hover {
+            background-color: $point-color;
+            span {
+              color: $white-color;
+            }
+          }
+        }
+      }
+    }
+    .online a {
+      height: 140px;
+      background-image: url(../img/bg_contact.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .manager a {
+      height: 140px;
+      background-image: url(../img/bg_charge.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
